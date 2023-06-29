@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Podstawy Podstaw</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@18.2.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@7.20.0/babel.js"></script>
+    <script src="https://unpkg.com/prop-types@15.8.1/prop-types.js"></script>
+    <script type="text/babel">
+      // const propTypes = {
+      //   string(props, propName, componentName) {
+      //     const type = typeof props[propName];
+      //     if (type !== "string") {
+      //       throw new Error(
+      //         `Hej uzytkowniku w komponencie o nazwie ${componentName.toUpperCase()} props ${propName.toUpperCase()} oczekiwany jest string ale podano ${type}`
+      //       );
+      //     }
+      //   },
+
+      //   number(props, propName, componentName) {
+      //     const type = typeof props[propName];
+      //     if (type !== "number") {
+      //       throw new Error(
+      //         `Hej uzytkowniku w komponencie o nazwie ${componentName.toUpperCase()} props ${propName.toUpperCase()} oczekiwany jest number ale podano ${type}`
+      //       );
+      //     }
+      //   },
+      // };
+
+      function Player({ className, club, teamNumber, ...restProps }) {
+        console.log();
+        return <div className={`player player__${club}`} {...restProps} />;
+      }
+      Player.propTypes = {
+        club: propTypes.string,
+        teamNumber: propTypes.number,
+      };
+
+      const reactEl = (
+        <div className="container">
+          <Player club="bayern" teamNumber={9}>
+            Robert Lewandowski
+          </Player>
+          <Player club={5} teamNumber={11}>
+            Marco Reus
+          </Player>
+          <Player club="schalke">Amine Harit</Player>
+        </div>
+      );
+      ReactDOM.render(reactEl, document.getElementById("root"));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+body{
+    font-family: 'Roboto';
+    margin: 0;
+    padding: 0;
+    background-color:lightcyan;
+}
+ 
+.participants{
+    color:black;
+    width: 50%;
+    text-align: center;
+    margin: 10px auto;
+    border: 2px solid white;
+    padding: 10px 20px;
+    
+}
+
+.participants__green{
+    border: 2px solid green;
+    text-align: center;
+   
+}
+.participants__pink{
+    border: 2px solid palevioletred;
+}
+.participants__grey{
+    border: 2px solid grey;
+}
+.participants__yellow{
+    border: 2px solid yellow; 
+}
+.participants__blue{
+    border: 2px solid blue;
+}
+.participants__teacher{
+    text-align: center;
+    text-align: left;
+    border: 0;
+    padding-bottom: 50px;
+   
+}
+
+h1{
+    color:cornflowerblue
+}

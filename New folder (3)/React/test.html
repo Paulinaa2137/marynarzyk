@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test React</title>
+    <link rel="stylesheet" href="test.css" />
+  </head>
+  <body>
+    <div id="root">
+      <!-- <div class="container">Hello World</div> -->
+    </div>
+    <script src="https://unpkg.com/react@17.0.1/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.1/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+    <script type="text/babel">
+      function Participants({ favColor, children }) {
+        return (
+          <div className={`participants participants__${favColor}`}>
+            {children}
+          </div>
+        );
+      }
+
+      const reactEl = (
+        <div className="container">
+          <h1>Uczestnicy Akademii ❣</h1>
+          <Participants favColor="teacher">Olek ( ͡° ͜ʖ ͡°)</Participants>
+          <Participants favColor="green">🐬Sebastian🐬</Participants>
+          <Participants favColor="pink">😈Patrycja😈</Participants>
+          <Participants favColor="grey">🐒Daniel🐒</Participants>
+          <Participants favColor="yellow">🤦‍♀️Wiktoria🤦‍♀️</Participants>
+          <Participants favColor="blue">🤡Paulina🤡</Participants>
+        </div>
+      );
+      ReactDOM.render(reactEl, document.getElementById("root"));
+    </script>
+  </body>
+</html>
